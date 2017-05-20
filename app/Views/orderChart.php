@@ -2,22 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>简洁Bootstrap响应式后台管理系统模板下载</title>
-    <meta name="keywords" content="Bootstrap模板,Bootstrap3模版,Bootstrap模板下载,Bootstrap后台模板,Bootstrap教程,Bootstrap中文,后台管理系统模板,后台模板下载,后台管理系统,后台管理模板" />
-    <meta name="description" content="JS代码网提供Bootstrap模板,后台管理系统模板,后台管理界面,Bootstrap后台板版下载" />
+    <title>曲线图</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../resources/css/bootstrap.css" rel="stylesheet">
     <link href="../resources/css/site.css" rel="stylesheet">
     <link href="../resources/css/bootstrap-responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lte IE 8]><script src="../resources/js/excanvas.min.js"></script><![endif]-->
-    <style type="text/css">
-        html, body {
-            height: 100%;
-        }
-    </style>
     <script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
     <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
     <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
