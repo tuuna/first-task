@@ -52,7 +52,6 @@
                 <li><a href="#">Next</a></li>
             </ul>
         </div>
-        <a href="/order/edit/hour/(:num)" class="btn btn-success">增加小时需求</a>
     </div>
 </div>
 </div>

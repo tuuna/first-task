@@ -89,4 +89,5 @@ class OrderController extends OrderRepository
         $details = $this->getHourList();
         echo View::getView()->make('orderHourList',['details' => $details])->render();
     }
+
 }

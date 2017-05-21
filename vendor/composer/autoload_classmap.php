@@ -6,6 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ChartController' => $baseDir . '/app/Controllers/ChartController.php',
+    'ChartRepository' => $baseDir . '/app/Repositories/ChartRepository.php',
     'Order' => $baseDir . '/app/Models/Order.php',
     'OrderController' => $baseDir . '/app/Controllers/OrderController.php',
     'OrderHour' => $baseDir . '/app/Models/OrderHour.php',

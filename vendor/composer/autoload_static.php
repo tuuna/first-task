@@ -90,6 +90,8 @@ class ComposerStaticInit05801da9256c761a872c9427703fdfd1
     );
 
     public static $classMap = array (
+        'ChartController' => __DIR__ . '/../..' . '/app/Controllers/ChartController.php',
+        'ChartRepository' => __DIR__ . '/../..' . '/app/Repositories/ChartRepository.php',
         'Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'OrderController' => __DIR__ . '/../..' . '/app/Controllers/OrderController.php',
         'OrderHour' => __DIR__ . '/../..' . '/app/Models/OrderHour.php',

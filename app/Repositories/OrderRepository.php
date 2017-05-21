@@ -31,8 +31,8 @@ class OrderRepository
 
     public function createHour($id)
     {
-        $i = 1;
-        while ($i <25) {
+        $i = 0;
+        while ($i <24) {
            OrderHour::create([
                 'o_id' => $id,
                 'hour' => $i
@@ -40,7 +40,7 @@ class OrderRepository
            ++$i;
            $k = $i;
         }
-        if($k == 25) {
+        if($k == 24) {
             return true;
         } else {
             return false;

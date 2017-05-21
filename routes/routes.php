@@ -17,6 +17,10 @@ Macaw::get('/order/edit/hour/(:num)','OrderController@hourEditPage');
 Macaw::post('/order/edit/hour/complete','OrderController@hourEdit');
 Macaw::get('/order/hour/list','OrderController@hourList');
 
+//Macaw::get('/hour','OrderController@hourChart');
+
+Macaw::get('/hour/(:num)','ChartController@getHourChartData');
+
 Macaw::get('/error',function(){
     echo View::getView()->make('error')->render();
 });
