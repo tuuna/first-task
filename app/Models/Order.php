@@ -12,7 +12,7 @@ class Order extends Model
 
     public function orderHour()
     {
-        return $this->hasOne(OrderHour::class);
+        return $this->hasMany(OrderHour::class,'o_id');
     }
 
     public function orderUrl()
@@ -22,11 +22,11 @@ class Order extends Model
 
     public function staticHour()
     {
-        return $this->hasOne(StaticHour::class);
+        return $this->hasMany(StaticHour::class);
     }
 
     public function staticDay()
     {
-        return $this->hasOne(StaticDay::class);
+        return $this->hasMany(StaticDay::class);
     }
 }

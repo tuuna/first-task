@@ -1,8 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<!--<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" media="screen"
-      href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">-->
 <div class="span9">
             <div class="row-fluid">
                 <div class="page-header">

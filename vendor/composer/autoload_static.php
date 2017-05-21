@@ -92,7 +92,12 @@ class ComposerStaticInit05801da9256c761a872c9427703fdfd1
     public static $classMap = array (
         'Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'OrderController' => __DIR__ . '/../..' . '/app/Controllers/OrderController.php',
+        'OrderHour' => __DIR__ . '/../..' . '/app/Models/OrderHour.php',
         'OrderRepository' => __DIR__ . '/../..' . '/app/Repositories/OrderRepository.php',
+        'OrderUrl' => __DIR__ . '/../..' . '/app/Models/OrderUrl.php',
+        'StaticDay' => __DIR__ . '/../..' . '/app/Models/StaticDay.php',
+        'StaticHour' => __DIR__ . '/../..' . '/app/Models/StaticHour.php',
+        'StaticTotal' => __DIR__ . '/../..' . '/app/Models/StaticTotal.php',
         'View' => __DIR__ . '/../..' . '/assist/View.php',
     );
 

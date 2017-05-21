@@ -36,6 +36,7 @@
                 <ul class="nav nav-list">
                     <li class="nav-header"><i class="icon-wrench"></i>订单管理</li>
                     <li><a href="/order">订单列表</a></li>
+                    <li><a href="/order/hour/list">订单小时需求量</a></li>
                     <li><a href="/url-manage">订单链接管理</a></li>
                     <li class="nav-header"><i class="icon-signal"></i>数据统计</li>
                     <li><a href="/all-statistic">全量数据统计</a></li>

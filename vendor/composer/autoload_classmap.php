@@ -8,6 +8,11 @@ $baseDir = dirname($vendorDir);
 return array(
     'Order' => $baseDir . '/app/Models/Order.php',
     'OrderController' => $baseDir . '/app/Controllers/OrderController.php',
+    'OrderHour' => $baseDir . '/app/Models/OrderHour.php',
     'OrderRepository' => $baseDir . '/app/Repositories/OrderRepository.php',
+    'OrderUrl' => $baseDir . '/app/Models/OrderUrl.php',
+    'StaticDay' => $baseDir . '/app/Models/StaticDay.php',
+    'StaticHour' => $baseDir . '/app/Models/StaticHour.php',
+    'StaticTotal' => $baseDir . '/app/Models/StaticTotal.php',
     'View' => $baseDir . '/assist/View.php',
 );

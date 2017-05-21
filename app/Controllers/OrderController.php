@@ -23,8 +23,10 @@ class OrderController extends OrderRepository
     public function add()
     {
         if(!empty($_POST)) {
-            if($this->create($_POST)) {
-                $this->redirect('order');
+            if($info = $this->create($_POST)) {
+                if($this->createHour($info->id)) {
+                    $this->redirect('order');
+                }
             } else {
                 $this->redirect('error');
             }
@@ -56,4 +58,35 @@ class OrderController extends OrderRepository
      * @param $id
      * 订单删除
      */
+
+
+    /**
+     * @param $id
+     * 修改或添加每小时需求量
+     */
+    public function hourEditPage($id)
+    {
+            $detail = $this->getCertainHourData($id);
+            echo View::getView()->make('orderHourEdit',['detail' => $detail])->render();
+    }
+
+    public function hourEdit()
+    {
+        if(!empty($_POST)) {
+            if($this->updateHour($_POST)) {
+                $this->redirect('order/hour/list');
+            } else {
+                $this->redirect('error');
+            }
+        }
+    }
+
+    /**
+     * 每小时需求量表格
+     */
+    public function hourList()
+    {
+        $details = $this->getHourList();
+        echo View::getView()->make('orderHourList',['details' => $details])->render();
+    }
 }
