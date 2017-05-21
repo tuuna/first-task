@@ -7,6 +7,8 @@ class StaticTotal extends Model
     public $timestamps = false;
 
     public $fillable = [
-        'title','type','state','start','end','click','flow','remark','created'
+        'day',
+        'click_ip', 'click_pv', 'click_ip_use', 'click_pv_use',
+        'flow_ip', 'flow_pv', 'flow_ip_use', 'flow_pv_use'
     ];
 }

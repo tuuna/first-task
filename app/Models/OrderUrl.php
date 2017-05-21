@@ -7,6 +7,6 @@ class OrderUrl extends Model
     public $timestamps = false;
 
     public $fillable = [
-        'title','type','state','start','end','click','flow','remark','created'
+        'o_id','flag','sort','url'
     ];
 }

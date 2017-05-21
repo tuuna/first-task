@@ -7,6 +7,6 @@ class StaticHour extends Model
     public $timestamps = false;
 
     public $fillable = [
-        'title','type','state','start','end','click','flow','remark','created'
+        'o_id','day','hour','click_ip','click_pv','flow_ip','flow_pv'
     ];
 }
