@@ -45,4 +45,4 @@
                 </ul>
             </div>
         </div>
-        @yield("content")
+        <?php echo $__env->yieldContent("content"); ?>

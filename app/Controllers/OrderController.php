@@ -8,6 +8,6 @@ class OrderController extends OrderRepository
     public function index()
     {
         $orders = Order::where('type',0)->get();
-        echo View::getView()->make('home', ['a' => $a,'b' => 'failure!','orders' => $orders])->render();
+        echo View::getView()->make('order', ['a' => $a,'b' => 'failure!','orders' => $orders])->render();
     }
 }
