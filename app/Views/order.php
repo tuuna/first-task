@@ -55,7 +55,7 @@
                                         <li class="nav-header">编辑</li>
                                         <li><a href="/order/edit/{{$order->id}}"><i class="icon-pencil"></i> 编辑<strong>订单详情</strong></a></li>
                                         <li><a href="/url-manage/add/{{$order->id}}"><i class="icon-pencil"></i> 添加<strong>友链</strong></a></li>
-                                        <li><a href="/order/delete/{{$order->id}}"><i class="icon-trash"></i> 删除</a></li>
+<!--                                        <li><a href="/order/delete/{{$order->id}}"><i class="icon-trash"></i> 删除</a></li>-->
                                         <li class="nav-header">统计</li>
                                         <li><a href="/hour/{{$order->id}}"><i class="icon-eye-open"></i>小时需求量<strong>统计图表</strong></a></li>
                                         <li><a href="/hour-static/{{$order->id}}"><i class="icon-eye-open"></i>小时数据<strong>统计图表</strong></a></li>

@@ -37,7 +37,7 @@
                         <ul class="dropdown-menu">
                             <li class="nav-header">编辑</li>
                             <li><a href="/url-manage/edit/{{$order->id}}"><i class="icon-pencil"></i> 编辑<strong>地址情况</strong></a></li>
-                            <li><a href="/order/delete/{{$order->id}}"><i class="icon-trash"></i> 删除</a></li>
+<!--                            <li><a href="/order/delete/{{$order->id}}"><i class="icon-trash"></i> 删除</a></li>-->
                         </ul>
                     </div>
                 </td>
@@ -47,7 +47,7 @@
             </tbody>
         </table>
         <div class="pagination">
-            <ul>
+            <!--<ul>
                 <li><a href="#">Prev</a></li>
                 <li class="active">
                     <a href="#">1</a>
@@ -56,7 +56,7 @@
                 <li><a href="#">3</a></li>
                 <li><a href="#">4</a></li>
                 <li><a href="#">Next</a></li>
-            </ul>
+            </ul>-->
         </div>
     </div>
 </div>

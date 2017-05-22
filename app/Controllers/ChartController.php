@@ -55,4 +55,56 @@ class ChartController extends ChartRepository
         ])->render();
     }
 
+    /**
+     * @param $id
+     * 统计每日的数据
+     */
+    public function getFinalDayData($id)
+    {
+            if($this->isDayDateExist($id)) {
+                $this->getStaticDayChartData($id);
+            } else {
+                echo View::getView()->make('hasNoResult')->render();
+            }
+    }
+
+    public function getStaticDayChartData($id)
+    {
+        $data = $this->getStaticOrderDayData($id);
+        $name = $this->getOrderName($id);
+        echo View::getView()->make('orderStaticDayChart',[
+            'ydata' => json_encode($data['y']),
+            'ydata2' => json_encode($data['z']),
+            'ydata3' => json_encode($data['a']),
+            'ydata4' => json_encode($data['b']),
+            'name' => $name
+        ])->render();
+    }
+
+    /**
+     * 全量统计数据
+     */
+
+    public function totalList()
+    {
+        $totals = $this->getStaticTotalData();
+        echo View::getView()->make('orderStaticTotalList',['totals' => $totals])->render();
+    }
+
+    public function getDateTotalData()
+    {
+        $data = $this->getTotalData();
+        echo View::getView()->make('orderStaticTotalChart',[
+            'ydata' => json_encode($data['y']),
+            'ydata2' => json_encode($data['z']),
+            'ydata3' => json_encode($data['a']),
+            'ydata4' => json_encode($data['b']),
+            'ydata5' => json_encode($data['c']),
+            'ydata6' => json_encode($data['d']),
+            'ydata7' => json_encode($data['e']),
+            'ydata8' => json_encode($data['f'])
+        ])->render();
+    }
+
+
 }

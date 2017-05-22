@@ -21,7 +21,9 @@ Macaw::get('/order/hour/list','OrderController@hourList');
 Macaw::get('/hour/(:num)','ChartController@getHourChartData');
 Macaw::get('/hour-static/(:num)','ChartController@selectHourDate');
 Macaw::post('/hour-static/complete','ChartController@getFinalData');
-
+Macaw::get('/day-static/(:num)','ChartController@getFinalDayData');
+Macaw::get('/all-statistic','ChartController@totalList');
+Macaw::get('/all-statistic/total','ChartController@getDateTotalData');
 
 Macaw::get('/url-manage','UrlController@list');
 Macaw::get('/url-manage/add/(:num)','UrlController@addPage');
