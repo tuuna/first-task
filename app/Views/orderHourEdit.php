@@ -5,7 +5,7 @@
         <div class="page-header">
             <h1>小时需求 <small>修改</small></h1>
         </div>
-        <form class="form-horizontal" method="post" action="/order/edit/hour/complete">
+        <form class="form-horizontal" method="post" action="/url-manage/edit/complete">
             <fieldset>
                 <input name="id" value="{{$detail->id}}" type="hidden">
                 <div class="control-group">

@@ -1,5 +1,4 @@
 <?php
-
 class OrderRepository
 {
     public function getOrderList()
@@ -49,7 +48,7 @@ class OrderRepository
 
     public function getHourList()
     {
-        return Order::with('orderHour')->get();
+        return Order::with('orderHour')->orderBy('id',ASC)->get();
     }
 
     public function create(array $data)

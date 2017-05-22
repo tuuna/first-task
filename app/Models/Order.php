@@ -17,16 +17,16 @@ class Order extends Model
 
     public function orderUrl()
     {
-        return $this->hasMany(OrderUrl::class);
+        return $this->hasMany(OrderUrl::class,'o_id');
     }
 
     public function staticHour()
     {
-        return $this->hasMany(StaticHour::class);
+        return $this->hasMany(StaticHour::class,'o_id');
     }
 
     public function staticDay()
     {
-        return $this->hasMany(StaticDay::class);
+        return $this->hasMany(StaticDay::class,'o_id');
     }
 }
