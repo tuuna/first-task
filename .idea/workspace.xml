@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12c71bb1-a84d-4fb6-b028-c83df74c1873" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Views/orderStaticDayChart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Views/orderStaticTotalChart.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Views/orderStaticTotalList.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/noahbuscher/macaw" afterPath="$PROJECT_DIR$/vendor/noahbuscher/macaw" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controllers/ChartController.php" afterPath="$PROJECT_DIR$/app/Controllers/ChartController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Repositories/ChartRepository.php" afterPath="$PROJECT_DIR$/app/Repositories/ChartRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Views/order.php" afterPath="$PROJECT_DIR$/app/Views/order.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Views/orderUrlList.php" afterPath="$PROJECT_DIR$/app/Views/orderUrlList.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/51d8d78b54e3c6ea81ef1cff961bdfa6" afterPath="$PROJECT_DIR$/cache/51d8d78b54e3c6ea81ef1cff961bdfa6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/5ec812bea7ee0b331ad84adfe34c4313" afterPath="$PROJECT_DIR$/cache/5ec812bea7ee0b331ad84adfe34c4313" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cache/78cb1b7ae072b747ab50845bb1d66f35" afterPath="$PROJECT_DIR$/cache/78cb1b7ae072b747ab50845bb1d66f35" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/routes.php" afterPath="$PROJECT_DIR$/routes/routes.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -428,18 +417,18 @@
       <workItem from="1495241792000" duration="19940000" />
       <workItem from="1495328128266" duration="3633000" />
       <workItem from="1495332374656" duration="36266000" />
-      <workItem from="1495426628402" duration="11347000" />
+      <workItem from="1495426628402" duration="11402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71186000" />
+    <option name="totallyTimeSpent" value="71241000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1600" y="24" width="1920" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2153518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2153518" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
