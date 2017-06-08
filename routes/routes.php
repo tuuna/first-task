@@ -19,19 +19,29 @@ Macaw::get('/order/hour/list','OrderController@hourList');
 
 
 Macaw::get('/hour/(:num)','ChartController@getHourChartData');
-Macaw::get('/hour-static/(:num)','ChartController@selectHourDate');
-Macaw::post('/hour-static/complete','ChartController@getFinalData');
+Macaw::get('/hour-static/(:num)','ChartController@getFinalData');
 Macaw::get('/day-static/(:num)','ChartController@getFinalDayData');
 Macaw::get('/all-statistic','ChartController@totalList');
 Macaw::get('/all-statistic/total','ChartController@getDateTotalData');
+Macaw::get('/orderStaticList','OrderController@orderStaticList');
 
-Macaw::get('/url-manage','UrlController@list');
+Macaw::post('/order/find/all','OrderController@orderFindAll');
+Macaw::post('/order/find/all/charts','OrderController@orderFindAllChart');
+Macaw::post('/all-statistic/total/find','ChartController@orderFindTotal');
+
+Macaw::get('/order/default/(:num)','OrderController@statusDefault');
+Macaw::get('/order/start/(:num)','OrderController@statusStart');
+Macaw::get('/order/stop/(:num)','OrderController@statusStop');
+Macaw::get('/order/shutdown/(:num)','OrderController@statusShutdown');
+
+/*Macaw::get('/url-manage/(:num)','UrlController@list');
 Macaw::get('/url-manage/add/(:num)','UrlController@addPage');
 Macaw::post('/url-manage/add/complete','UrlController@add');
 Macaw::get('/url-manage/edit/(:num)','UrlController@editPage');
-Macaw::post('/url-manage/edit/complete','UrlController@edit');
+Macaw::post('/url-manage/edit/complete','UrlController@edit');*/
 Macaw::get('/error',function(){
     echo View::getView()->make('error')->render();
 });
 
+Macaw::get('/test','TestController@index');
 Macaw::dispatch();

@@ -30,6 +30,7 @@ class ComposerStaticInit05801da9256c761a872c9427703fdfd1
         'I' => 
         array (
             'Illuminate\\Support\\' => 19,
+            'Illuminate\\Pagination\\' => 22,
             'Illuminate\\Database\\' => 20,
             'Illuminate\\Contracts\\' => 21,
             'Illuminate\\Container\\' => 21,
@@ -60,6 +61,10 @@ class ComposerStaticInit05801da9256c761a872c9427703fdfd1
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/support',
+        ),
+        'Illuminate\\Pagination\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/pagination',
         ),
         'Illuminate\\Database\\' => 
         array (
@@ -100,7 +105,6 @@ class ComposerStaticInit05801da9256c761a872c9427703fdfd1
         'StaticDay' => __DIR__ . '/../..' . '/app/Models/StaticDay.php',
         'StaticHour' => __DIR__ . '/../..' . '/app/Models/StaticHour.php',
         'StaticTotal' => __DIR__ . '/../..' . '/app/Models/StaticTotal.php',
-        'UrlController' => __DIR__ . '/../..' . '/app/Controllers/UrlController.php',
         'UrlRepository' => __DIR__ . '/../..' . '/app/Repositories/UrlRepository.php',
         'View' => __DIR__ . '/../..' . '/assist/View.php',
     );

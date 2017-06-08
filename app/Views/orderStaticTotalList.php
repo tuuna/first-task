@@ -12,6 +12,7 @@
                 <th>点击IP量</th>
                 <th>点击流量</th>
                 <th>点击IP使用量</th>
+                <th>点击流量使用量</th>
                 <th>曝光IP量</th>
                 <th>曝光流量</th>
                 <th>曝光IP使用量</th>

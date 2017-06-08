@@ -16,7 +16,6 @@ return array(
     'StaticDay' => $baseDir . '/app/Models/StaticDay.php',
     'StaticHour' => $baseDir . '/app/Models/StaticHour.php',
     'StaticTotal' => $baseDir . '/app/Models/StaticTotal.php',
-    'UrlController' => $baseDir . '/app/Controllers/UrlController.php',
     'UrlRepository' => $baseDir . '/app/Repositories/UrlRepository.php',
     'View' => $baseDir . '/assist/View.php',
 );

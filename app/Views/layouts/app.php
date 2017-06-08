@@ -7,6 +7,11 @@
     <link href="/../resources/css/bootstrap.css" rel="stylesheet">
     <link href="/../resources/css/site.css" rel="stylesheet">
     <link href="/../resources/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/../resources/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/../resources/css/bootstrap-datetimepicker.min.css">
+    <script type="text/javascript"  src="/../resources/js/jquery.min.js"></script>
+    <script type="text/javascript"  src="/../resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript"  src="/../resources/js/bootstrap-datetimepicker.min.js"
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -35,10 +40,12 @@
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                     <li class="nav-header"><i class="icon-wrench"></i>订单管理</li>
+                    <li><a href="/order/add">新增订单</a></li>
                     <li><a href="/order">订单列表</a></li>
-                    <li><a href="/order/hour/list">订单小时需求量</a></li>
-                    <li><a href="/url-manage">订单链接管理</a></li>
+    <!--                <li><a href="/order/hour/list">订单小时需求量</a></li>
+                    <li><a href="/url-manage">订单链接管理</a></li>-->
                     <li class="nav-header"><i class="icon-signal"></i>数据统计</li>
+                    <li><a href="/orderStaticList">订单统计</a></li>
                     <li><a href="/all-statistic">全量数据统计</a></li>
                 </ul>
             </div>

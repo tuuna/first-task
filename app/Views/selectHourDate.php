@@ -11,7 +11,11 @@
                 <div class="control-group">
                     <label class="control-label" for="date">日期</label>
                     <div class="controls">
-                        <input type="text" class="input-xlarge" id="date" name="date" placeholder="输入格式为 2017-05-21"/>
+                        <select id="date" name="date">
+                            @foreach($dates as $date)
+                            <option value="{{$date}}">{{$date}}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="form-actions">

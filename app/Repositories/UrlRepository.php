@@ -8,9 +8,9 @@ class UrlRepository
         exit();
     }
 
-    public function getUrlList()
+    public function getUrlList($id)
     {
-        return Order::with('orderUrl')->orderBy('id',ASC)->get();
+        return Order::with('orderUrl')->where('id',$id)->orderBy('id')->get();
     }
 
     public function getCertainUrl($id)

@@ -13,5 +13,6 @@ $capsule->addConnection(require './config/database.php');
 
 $capsule->bootEloquent();
 
+
 require './routes/routes.php';
 

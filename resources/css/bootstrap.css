@@ -958,6 +958,10 @@ select:focus {
   width: 90px;
 }
 
+.input-mini-flow {
+  width: 60px;
+}
+
 .input-medium {
   width: 150px;
 }

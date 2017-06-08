@@ -4,6 +4,17 @@
             <div class="row-fluid">
                 <div class="page-header">
                     <h1>订单 <small>列表</small></h1>
+                    <div style="float: left; margin-top: 10px;">
+                        <form name="search_form" method="post" action="/order/find/all">
+                            订单ID：<input type="text" name="id" class="input-mini"/> &nbsp;&nbsp;
+                            广告名称：<input type="text" name="name" class="input-small" />&nbsp;&nbsp;
+                            时间范围：
+                            <input type="datetime" name="start-date" class="input-small"/>
+                            -
+                            <input type="datetime" name="end-date" class="input-small"/>
+                            <input type="submit" name="searchbtn" value="开始查询" />
+                        </form>
+                    </div>
                 </div>
                 <table class="table table-striped table-bordered table-condensed">
                     <thead>
@@ -15,8 +26,6 @@
                         <th>点击需求量</th>
                         <th>曝光需求量</th>
                         <th>状态</th>
-                        <th>类型</th>
-                        <th>创建时间</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -31,35 +40,42 @@
                             <td>{{$order->flow}}</td>
                             <td>
                                 @if($order->state == 0)
-                                    <span class="label label-warning">未开启</span>
+                                <span class="label label-warning">未开启</span>
                                 @elseif($order->state == 1)
-                                    <span class="label label-warning">正常开启</span>
+                                <span class="label label-warning">正常开启</span>
                                 @elseif($order->state == 2)
-                                    <span class="label label-warning">已暂停</span>
+                                <span class="label label-warning">已暂停</span>
                                 @else
-                                    <span class="label label-warning">已关闭</span>
+                                <span class="label label-warning">已关闭</span>
                                 @endif
                             </td>
-                            <td>
-                                @if($order->type)
-                                    <span class="label label-important">可替换</span>
-                                @else
-                                    <span class="label label-success">不可替换</span>
-                                @endif
-                            </td>
-                            <td>{{$order->created}}</td>
                             <td>
                                 <div class="btn-group">
                                     <a class="btn btn-mini dropdown-toggle" data-toggle="dropdown" href="#">操作<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-header">编辑</li>
                                         <li><a href="/order/edit/{{$order->id}}"><i class="icon-pencil"></i> 编辑<strong>订单详情</strong></a></li>
-                                        <li><a href="/url-manage/add/{{$order->id}}"><i class="icon-pencil"></i> 添加<strong>友链</strong></a></li>
 <!--                                        <li><a href="/order/delete/{{$order->id}}"><i class="icon-trash"></i> 删除</a></li>-->
-                                        <li class="nav-header">统计</li>
+                                        <li class="nav-header">图表</li>
                                         <li><a href="/hour/{{$order->id}}"><i class="icon-eye-open"></i>小时需求量<strong>统计图表</strong></a></li>
-                                        <li><a href="/hour-static/{{$order->id}}"><i class="icon-eye-open"></i>小时数据<strong>统计图表</strong></a></li>
-                                        <li><a href="/day-static/{{$order->id}}"><i class="icon-eye-open"></i>每日数据<strong>统计图表</strong></a></li>
+                                        <li class="nav-header">状态改变</li>
+                                        @if($order->state == 0)
+                                        <li><a href="/order/start/{{$order->id}}"><i class="icon-headphones"></i>正常开启</a></li>
+                                        <li><a href="/order/stop/{{$order->id}}"><i class="icon-headphones"></i>暂停</a></li>
+                                        <li><a href="/order/shutdown/{{$order->id}}"><i class="icon-headphones"></i>关闭</a></li>
+                                        @elseif($order->state == 1)
+                                        <li><a href="/order/default/{{$order->id}}"><i class="icon-headphones"></i>未开启</a></li>
+                                        <li><a href="/order/stop/{{$order->id}}"><i class="icon-headphones"></i>暂停</a></li>
+                                        <li><a href="/order/shutdown/{{$order->id}}"><i class="icon-headphones"></i>关闭</a></li>
+                                        @elseif($order->state == 2)
+                                        <li><a href="/order/default/{{$order->id}}"><i class="icon-headphones"></i>未开启</a></li>
+                                        <li><a href="/order/start/{{$order->id}}"><i class="icon-headphones"></i>正常开启</a></li>
+                                        <li><a href="/order/shutdown/{{$order->id}}"><i class="icon-headphones"></i>关闭</a></li>
+                                        @else
+                                        <li><a href="/order/default/{{$order->id}}"><i class="icon-headphones"></i>开启</a></li>
+                                        <li><a href="/order/start/{{$order->id}}"><i class="icon-headphones"></i>正常开启</a></li>
+                                        <li style="background-color: #0e90d2"><a href="/order/shutdown/{{$order->id}}"><i class="icon-headphones"></i>关闭</a></li>
+                                        @endif
                                     </ul>
                                 </div>
                             </td>
@@ -69,7 +85,6 @@
                 </table>
                 <div class="pagination">
                 </div>
-                <a href="/order/add" class="btn btn-success">增加订单</a>
             </div>
         </div>
     </div>
@@ -77,8 +92,6 @@
     <hr>
 </div>
 
-<script src="/../resources/js/jquery.js"></script>
-<script src="/../resources/js/bootstrap.min.js"></script>
 <script>
     $(document).ready(function() {
         $('.dropdown-menu li a').hover(

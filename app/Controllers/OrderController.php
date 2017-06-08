@@ -11,6 +11,176 @@ class OrderController extends OrderRepository
         echo View::getView()->make('order', ['orders' => $orders])->render();
     }
 
+    public function orderFindId()
+    {
+        if(!empty($_POST)) {
+            if($order = $this->hasOneIdResult($_POST)) {
+                echo View::getView()->make('hasOneResult',['order' => $order])->render();
+            } else {
+                echo View::getView()->make('hasNoResult')->render();
+            }
+        } else {
+            echo VIew::getView()->make('error')->render();
+        }
+    }
+
+    public function orderFindName()
+    {
+        if(!empty($_POST)) {
+            if($order = $this->hasOneResult($_POST)) {
+                echo View::getView()->make('hasOneResult',['order' => $order])->render();
+            } elseif ($orders = $this->hasManyResult($_POST)) {
+                echo View::getView()->make('order',['orders' => $orders])->render();
+            } else {
+                echo View::getView()->make('hasNoResult')->render();
+            }
+        } else {
+            echo VIew::getView()->make('error')->render();
+        }
+    }
+
+    public function orderFindDate()
+    {
+        if(!empty($_POST)) {
+            if($order = $this->hasOneDateResult($_POST)) {
+                echo View::getView()->make('hasOneResult',['order' => $order])->render();
+            } elseif ($orders = $this->hasManyDateResult($_POST)) {
+                echo View::getView()->make('order',['orders' => $orders])->render();
+            } else {
+                echo View::getView()->make('hasNoResult')->render();
+            }
+        } else {
+            echo VIew::getView()->make('error')->render();
+        }
+    }
+
+    public function orderFindAll()
+    {
+        if(!empty($_POST)) {
+            if(!empty($_POST['id']) && empty($_POST['name']) && empty($_POST['start-date']) && empty($_POST['end-date'])) {
+                if($order = $this->hasOneIdResult($_POST)) {
+                    echo View::getView()->make('hasOneResult',['order' => $order])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (empty($_POST['id']) && !empty($_POST['name']) && empty($_POST['start-date']) && empty($_POST['end-date'])) {
+                if($order = $this->hasOneResult($_POST)) {
+                    echo View::getView()->make('hasOneResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyResult($_POST)) {
+                    echo View::getView()->make('order',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif(empty($_POST['id']) && empty($_POST['name']) && !empty($_POST['start-date']) && !empty($_POST['end-date'])) {
+                if($order = $this->hasOneDateResult($_POST)) {
+                    echo View::getView()->make('hasOneResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyDateResult($_POST)) {
+                    echo View::getView()->make('order',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (!empty($_POST['id']) && !empty($_POST['name']) && empty($_POST['start-date']) && empty($_POST['end-date'])) {
+                if($order = $this->hasOneIdResult($_POST)) {
+                    echo View::getView()->make('hasOneResult',['order' => $order])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (!empty($_POST['id']) && empty($_POST['name']) && !empty($_POST['start-date']) && !empty($_POST['end-date'])) {
+                if($order = $this->hasOneDateIdResult($_POST)) {
+                    echo View::getView()->make('hasOneResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyDateIdResult($_POST)) {
+                    echo View::getView()->make('order',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (empty($_POST['id']) && !empty($_POST['name']) && !empty($_POST['start-date']) && !empty($_POST['end-date'])) {
+                if($order = $this->hasOneNameDateResult($_POST)) {
+                    echo View::getView()->make('hasOneResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyNameDateResult($_POST)) {
+                    echo View::getView()->make('order',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (!empty($_POST['id']) && !empty($_POST['name']) && !empty($_POST['start-date']) && !empty($_POST['end-date'])) {
+                if($order = $this->hasOneDateIdResult($_POST)) {
+                    echo View::getView()->make('hasOneResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyDateIdResult($_POST)) {
+                    echo View::getView()->make('order',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } else {
+                echo View::getView()->make('error')->render();
+            }
+        } else {
+            echo View::getView()->make('error')->render();
+        }
+
+    }
+
+    public function orderFindAllChart()
+    {
+        if(!empty($_POST)) {
+            if(!empty($_POST['id']) && empty($_POST['name']) && empty($_POST['start-date']) && empty($_POST['end-date'])) {
+                if($order = $this->hasOneIdResult($_POST)) {
+                    echo View::getView()->make('hasOneChartResult',['order' => $order])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (empty($_POST['id']) && !empty($_POST['name']) && empty($_POST['start-date']) && empty($_POST['end-date'])) {
+                if($order = $this->hasOneResult($_POST)) {
+                    echo View::getView()->make('hasOneChartResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyResult($_POST)) {
+                    echo View::getView()->make('chats',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif(empty($_POST['id']) && empty($_POST['name']) && !empty($_POST['start-date']) && !empty($_POST['end-date'])) {
+                if($order = $this->hasOneDateResult($_POST)) {
+                    echo View::getView()->make('hasOneChartResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyDateResult($_POST)) {
+                    echo View::getView()->make('chats',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (!empty($_POST['id']) && !empty($_POST['name']) && empty($_POST['start-date']) && empty($_POST['end-date'])) {
+                if($order = $this->hasOneIdResult($_POST)) {
+                    echo View::getView()->make('hasOneChartResult',['order' => $order])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (!empty($_POST['id']) && empty($_POST['name']) && !empty($_POST['start-date']) && !empty($_POST['end-date'])) {
+                if($order = $this->hasOneDateIdResult($_POST)) {
+                    echo View::getView()->make('hasOneChartResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyDateIdResult($_POST)) {
+                    echo View::getView()->make('chats',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (empty($_POST['id']) && !empty($_POST['name']) && !empty($_POST['start-date']) && !empty($_POST['end-date'])) {
+                if($order = $this->hasOneNameDateResult($_POST)) {
+                    echo View::getView()->make('hasOneChartResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyNameDateResult($_POST)) {
+                    echo View::getView()->make('chats',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } elseif (!empty($_POST['id']) && !empty($_POST['name']) && !empty($_POST['start-date']) && !empty($_POST['end-date'])) {
+                if($order = $this->hasOneDateIdResult($_POST)) {
+                    echo View::getView()->make('hasOneChartResult',['order' => $order])->render();
+                } elseif ($orders = $this->hasManyDateIdResult($_POST)) {
+                    echo View::getView()->make('chats',['orders' => $orders])->render();
+                } else {
+                    echo View::getView()->make('hasNoResult')->render();
+                }
+            } else {
+                echo View::getView()->make('error')->render();
+            }
+        } else {
+            echo View::getView()->make('error')->render();
+        }
+    }
+
     /**
      *
      * 订单添加
@@ -22,14 +192,14 @@ class OrderController extends OrderRepository
 
     public function add()
     {
-        if(!empty($_POST)) {
-            if($info = $this->create($_POST)) {
-                if($this->createHour($info->id)) {
-                    $this->redirect('order');
-                }
+        if(!empty($_POST) && $this->validateOrderAdd($_POST)) {
+            if($this->create($_POST)) {
+                $this->redirect('order');
             } else {
                 $this->redirect('error');
             }
+        } else {
+            $this->redirect('error');
         }
     }
 
@@ -39,8 +209,12 @@ class OrderController extends OrderRepository
      */
     public function editPage($id)
     {
-        $order = $this->getCertainOrder($id);
-        echo View::getView()->make('orderEdit',['order' => $order])->render();
+//        $order = $this->getOrderInfo($id);
+
+            echo View::getView()->make('orderEdit',['order'=> $this->getCertainOrder($id)])->render();
+
+//            echo View::getView()->make('error')->render();
+//        }
     }
 
     public function edit()
@@ -54,11 +228,17 @@ class OrderController extends OrderRepository
         }
     }
 
-    /**
-     * @param $id
-     * 订单删除
-     */
 
+
+    /**
+     * orderStaticList
+     * 数据统计列表
+     */
+    public function orderStaticList()
+    {
+        $orders = $this->getOrderList();
+        echo View::getView()->make('orderStaticList', ['orders' => $orders])->render();
+    }
 
     /**
      * @param $id
@@ -88,6 +268,46 @@ class OrderController extends OrderRepository
     {
         $details = $this->getHourList();
         echo View::getView()->make('orderHourList',['details' => $details])->render();
+    }
+
+    /**
+     * @param $id
+     * 状态改变
+     */
+    public function statusDefault($id)
+    {
+        if($this->changeStatus($id,'default')) {
+            $this->index();
+        } else {
+            echo View::getView()->make('error')->render();
+        }
+    }
+
+    public function statusStart($id)
+    {
+        if($this->changeStatus($id,'start')) {
+            $this->index();
+        } else {
+            echo View::getView()->make('error')->render();
+        }
+    }
+
+    public function statusStop($id)
+    {
+        if($this->changeStatus($id,'stop')) {
+            $this->index();
+        } else {
+            echo View::getView()->make('error')->render();
+        }
+    }
+
+    public function statusShutdown($id)
+    {
+        if($this->changeStatus($id,'shutdown')) {
+            $this->index();
+        } else {
+            echo View::getView()->make('error')->render();
+        }
     }
 
 }
